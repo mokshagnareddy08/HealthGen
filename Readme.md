@@ -120,7 +120,9 @@ cd frontend
 npm install
 npm run dev
 ```
+## 🔐 Environment Variables
 
+Create a `.env` file inside the `backend` folder and add:
 ---
 
 ##  Key Highlights
