@@ -122,7 +122,7 @@ npm run dev
 ```
 ## 🔐 Environment Variables
 
-Create a `.env` file inside the `backend` folder and add:
+-create `.env` files in frontend and backend and replace with your keys.
 ---
 
 ##  Key Highlights
