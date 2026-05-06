@@ -451,79 +451,88 @@ const MealPlan = () => {
     setMessage(`Meal logged. ${calories} calories added to today's intake.`);
   };
 
-  return (
-    <div className="max-w-[1160px] mx-auto px-4 py-4 space-y-4">
-      <div className="flex items-center justify-between gap-4 flex-wrap">
-        <div className="flex items-center gap-4">
-          <Button variant="ghost" size="sm" onClick={() => navigate(-1)}>
+    return (
+    <div className="w-full max-w-[1520px] mx-auto px-3 md:px-5 py-4 space-y-4">
+      <div className="rounded-[28px] border border-white/70 bg-white/70 backdrop-blur-2xl shadow-[0_24px_80px_-45px_rgba(15,23,42,0.35)] px-4 py-3 flex items-center justify-between gap-4 flex-wrap">
+        <div className="flex items-center gap-3 min-w-0">
+          <Button variant="ghost" size="sm" onClick={() => navigate(-1)} className="rounded-full bg-white/70 shadow-sm">
             <ChevronLeft className="w-5 h-5" />
           </Button>
 
-          <div>
-            <h1 className="text-xl md:text-2xl font-black text-slate-900">Meals your way</h1>
-            <p className="text-slate-500 mt-1">
-              Slide-style food cards with visuals, ingredients, notes, and smart alternates.
-            </p>
+          <div className="min-w-0">
+            <p className="text-[11px] uppercase tracking-[0.24em] text-slate-400 font-black">HealthGen meals</p>
+            <h1 className="text-xl md:text-2xl font-black text-slate-950 leading-tight">Meals your way</h1>
           </div>
         </div>
 
-        <div className="flex flex-wrap items-center gap-3">
+        <div className="flex flex-wrap items-center gap-2">
           <Badge variant="info">Goal: {formatGoal(profile.goal)}</Badge>
-          <Badge variant="success">Meals logged today: {logsToday}/4</Badge>
+          <Badge variant="success">Logged: {logsToday}/4</Badge>
         </div>
       </div>
 
       {message && (
-        <div className="rounded-2xl border border-emerald-100 bg-emerald-50 px-4 py-3 text-sm text-emerald-700">
+        <div className="rounded-[22px] border border-emerald-100 bg-emerald-50/90 px-4 py-3 text-sm font-semibold text-emerald-700 shadow-sm">
           {message}
         </div>
       )}
 
-      <section className="grid lg:grid-cols-[0.78fr,1.22fr] gap-3">
-        <Card className="rounded-[24px] border-0 overflow-hidden bg-gradient-to-br from-rose-50 via-white to-sky-50 shadow-[0_25px_60px_-30px_rgba(16,24,40,0.25)]">
-          <div className="p-4 md:p-4 flex flex-col h-full justify-between min-h-[230px]">
-            <div className="flex items-center justify-between text-slate-500 text-sm">
-              <Button variant="ghost" size="sm" className="!p-0 h-auto">
+      <section className="grid grid-cols-1 xl:grid-cols-[360px_1fr] gap-4">
+        <Card className="rounded-[34px] border border-white/70 overflow-hidden bg-white/60 backdrop-blur-2xl shadow-[0_30px_90px_-50px_rgba(15,23,42,0.45)] p-0">
+          <div className="relative min-h-[310px] p-5 bg-gradient-to-br from-rose-50 via-white to-sky-100 overflow-hidden">
+            <div className="absolute -top-12 -right-12 w-40 h-40 rounded-full bg-emerald-200/40 blur-3xl" />
+            <div className="absolute -bottom-12 -left-12 w-40 h-40 rounded-full bg-sky-200/50 blur-3xl" />
+
+            <div className="relative flex items-center justify-between text-slate-500 text-sm">
+              <Button variant="ghost" size="sm" className="!p-0 h-auto rounded-full">
                 <ChevronLeft className="w-5 h-5" />
               </Button>
-              <span>[{todayMeals.length}] Meals Added</span>
+              <span className="font-semibold">[{todayMeals.length}] Meals Added</span>
             </div>
 
-            <div className="relative mx-auto w-[118px] h-[118px] rounded-full bg-gradient-to-br from-emerald-200 via-lime-100 to-white flex items-center justify-center shadow-[0_25px_60px_rgba(34,197,94,0.22)] border border-white/70">
-              <span className="text-[50px]">🥗</span>
-              <span className="absolute top-4 right-6 text-2xl">🫛</span>
-              <span className="absolute bottom-8 left-5 text-3xl">🥒</span>
-              <span className="absolute -right-2 bottom-16 text-3xl">🥬</span>
+            <div className="relative mx-auto mt-6 w-[150px] h-[150px] rounded-full bg-gradient-to-br from-emerald-100 via-white to-sky-100 flex items-center justify-center shadow-[0_30px_75px_rgba(34,197,94,0.23)] border border-white/80">
+              <span className="text-[78px]">🥗</span>
+              <span className="absolute -top-2 right-5 text-2xl animate-pulse">🫛</span>
+              <span className="absolute bottom-8 -left-1 text-3xl">🥒</span>
+              <span className="absolute -right-3 bottom-12 text-3xl">🥬</span>
             </div>
 
-            <div className="text-center">
-              <h2 className="text-xl font-black text-slate-900">Meals Your Way</h2>
-              <p className="text-slate-500 mt-2 text-sm">
-                Pick your own meals with visual cards, ingredients, and better alternates.
+            <div className="relative text-center mt-7">
+              <h2 className="text-2xl font-black text-slate-950 tracking-tight">Meals Your Way</h2>
+              <p className="text-slate-500 mt-2 text-sm leading-relaxed max-w-[260px] mx-auto">
+                Pick, switch, log, and regenerate meals with compact visual cards.
               </p>
             </div>
           </div>
         </Card>
 
-        <Card className="rounded-[24px] border-0 shadow-[0_25px_60px_-30px_rgba(16,24,40,0.25)]">
-          <div className="flex items-center gap-2">
-            <Info className="w-5 h-5 text-brand-600" />
-            <h3 className="font-black text-slate-900 text-xl">Start your meal slides</h3>
+        <Card className="rounded-[34px] border border-white/70 bg-white/65 backdrop-blur-2xl shadow-[0_30px_90px_-50px_rgba(15,23,42,0.4)] p-5">
+          <div className="flex items-start justify-between gap-4 flex-wrap">
+            <div>
+              <div className="flex items-center gap-2">
+                <Info className="w-5 h-5 text-brand-600" />
+                <h3 className="font-black text-slate-950 text-xl">Generate meal slides</h3>
+              </div>
+              <p className="text-slate-500 mt-2 text-sm max-w-2xl">
+                Select a weekday and generate 4 meals. Each meal has compact alternates, nutrition, and individual regeneration.
+              </p>
+            </div>
+
+            <Button onClick={handleGenerate} disabled={!selectedDiet || !caloriesTarget} className="rounded-full px-5">
+              <Sparkles className="w-4 h-4 mr-2" />
+              Generate {selectedDay}
+            </Button>
           </div>
 
-          <p className="text-slate-500 mt-3">
-            Choose a weekday first. When you generate, each meal slot gets 3 visual alternates.
-          </p>
-
-          <div className="flex flex-wrap gap-2 mt-6">
+          <div className="flex flex-wrap gap-2 mt-5">
             {WEEK_DAYS.map((day) => (
               <button
                 key={day}
                 onClick={() => handleChangeDay(day)}
-                className={`px-3 py-2 rounded-xl text-sm font-semibold transition-all ${
+                className={`px-3.5 py-2 rounded-full text-sm font-bold transition-all ${
                   selectedDay === day
-                    ? "bg-brand-500 text-white shadow-lg shadow-brand-500/20"
-                    : "bg-slate-100 text-slate-600 hover:bg-slate-200"
+                    ? "bg-slate-950 text-white shadow-lg shadow-slate-900/15"
+                    : "bg-white/80 text-slate-600 border border-slate-100 hover:bg-slate-100"
                 }`}
               >
                 {day}
@@ -531,58 +540,50 @@ const MealPlan = () => {
             ))}
           </div>
 
-          <div className="grid sm:grid-cols-3 gap-3 mt-6 text-sm">
+          <div className="grid md:grid-cols-3 gap-3 mt-5 text-sm">
             {strictNotes.map((note) => (
-              <div key={note} className="rounded-xl bg-slate-50 p-3 text-slate-700 border border-slate-100">
+              <div key={note} className="rounded-[20px] bg-white/70 p-3 text-slate-700 border border-white shadow-sm">
                 {note}
               </div>
             ))}
           </div>
-
-          <div className="flex flex-wrap gap-2 mt-3">
-            <Button onClick={handleGenerate} disabled={!selectedDiet || !caloriesTarget}>
-              <Sparkles className="w-4 h-4 mr-2" />
-              Generate {selectedDay} Meals
-            </Button>
-          </div>
-
-          <div className="mt-4 rounded-2xl bg-gradient-to-br from-rose-100 via-white to-sky-100 text-slate-900 p-5">
-            <div className="flex items-start gap-3">
-              <ShieldAlert className="w-5 h-5 text-red-300 mt-0.5" />
-              <p className="text-sm text-slate-700">
-                Generated meals now stay visible when you go to another page. They only reset when you change day or generate again.
-              </p>
-            </div>
-          </div>
         </Card>
       </section>
 
-      <Card className="rounded-[24px] border-0 bg-gradient-to-br from-white/72 to-sky-50/70 p-4 md:p-5">
+      <Card className="rounded-[30px] border border-white/70 bg-white/65 backdrop-blur-2xl p-4 shadow-[0_22px_70px_-45px_rgba(15,23,42,0.35)]">
         <div className="flex items-center justify-between gap-3 flex-wrap">
           <div>
-            <p className="text-[11px] uppercase tracking-[0.22em] text-slate-400 font-bold">Today's logged graphs</p>
-            <h3 className="text-base font-black text-slate-900 mt-0.5">Meal tracking at a glance</h3>
+            <p className="text-[11px] uppercase tracking-[0.22em] text-slate-400 font-black">Today&apos;s progress</p>
+            <h3 className="text-base font-black text-slate-950 mt-0.5">Meal tracking at a glance</h3>
           </div>
           <Badge variant="success">{todayMeals.length} meals logged today</Badge>
         </div>
 
-        <div className="mt-4 grid grid-cols-2 lg:grid-cols-4 gap-3">
-          <CircularProgress value={caloriesEatenToday} target={caloriesTarget} label="Calories" unit="kcal" size={94} strokeWidth={9} strokeColor="#fb923c" subtitle="Logged today" />
-          <CircularProgress value={proteinToday} target={proteinTarget} label="Protein" unit="g" size={94} strokeWidth={9} strokeColor="#34d399" subtitle="Logged today" />
-          <CircularProgress value={carbsToday} target={carbsTarget} label="Carbs" unit="g" size={94} strokeWidth={9} strokeColor="#60a5fa" subtitle="Logged today" />
-          <CircularProgress value={fatsToday} target={fatsTarget} label="Fats" unit="g" size={94} strokeWidth={9} strokeColor="#c084fc" subtitle="Logged today" />
+        <div className="mt-4 grid grid-cols-2 md:grid-cols-4 gap-3">
+          <div className="rounded-[24px] bg-white/75 border border-white p-3 flex justify-center shadow-sm">
+            <CircularProgress value={caloriesEatenToday} target={caloriesTarget} label="Calories" unit="kcal" size={88} strokeWidth={9} strokeColor="#fb923c" subtitle="Logged today" />
+          </div>
+          <div className="rounded-[24px] bg-white/75 border border-white p-3 flex justify-center shadow-sm">
+            <CircularProgress value={proteinToday} target={proteinTarget} label="Protein" unit="g" size={88} strokeWidth={9} strokeColor="#34d399" subtitle="Logged today" />
+          </div>
+          <div className="rounded-[24px] bg-white/75 border border-white p-3 flex justify-center shadow-sm">
+            <CircularProgress value={carbsToday} target={carbsTarget} label="Carbs" unit="g" size={88} strokeWidth={9} strokeColor="#60a5fa" subtitle="Logged today" />
+          </div>
+          <div className="rounded-[24px] bg-white/75 border border-white p-3 flex justify-center shadow-sm">
+            <CircularProgress value={fatsToday} target={fatsTarget} label="Fats" unit="g" size={88} strokeWidth={9} strokeColor="#c084fc" subtitle="Logged today" />
+          </div>
         </div>
       </Card>
 
       {!generated ? (
-        <Card className="text-center py-10 rounded-[24px] border-0 shadow-xl shadow-slate-100/50 space-y-4">
-          <h3 className="text-2xl font-bold text-slate-900">No meals generated yet</h3>
+        <Card className="text-center py-12 rounded-[34px] border border-white/70 bg-white/70 backdrop-blur-2xl shadow-[0_25px_80px_-45px_rgba(15,23,42,0.35)] space-y-4">
+          <h3 className="text-2xl font-black text-slate-950">No meals generated yet</h3>
           <p className="text-slate-500 max-w-2xl mx-auto">
-            This page stays empty until you choose a day and generate meals.
+            Choose a day and generate meals to see your personalized cards here.
           </p>
         </Card>
       ) : (
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-3">
+        <div className="grid grid-cols-1 xl:grid-cols-2 gap-4">
           {mealCards.map((mealCard) => {
             const optionIndex = optionIndexes[mealCard.slot] ?? 0;
             const activeOption = mealCard.options[optionIndex];
@@ -593,86 +594,87 @@ const MealPlan = () => {
             return (
               <Card
                 key={mealCard.slot}
-                className="rounded-[20px] border border-white/70 bg-white/75 backdrop-blur-xl shadow-[0_18px_45px_-28px_rgba(16,24,40,0.32)] overflow-hidden"
+                className="rounded-[34px] border border-white/70 bg-white/70 backdrop-blur-2xl shadow-[0_28px_80px_-48px_rgba(15,23,42,0.42)] overflow-hidden p-0"
               >
-                <div className="grid md:grid-cols-[0.7fr,1.3fr] gap-3">
-                  <div className={`rounded-[20px] bg-gradient-to-br ${visual.bg} p-3 relative min-h-[205px] flex flex-col`}>
-                    <div className="flex items-center justify-between text-slate-500">
-                      <span className="text-[10px] font-bold tracking-[0.18em] uppercase">{mealCard.slot}</span>
+                <div className="grid md:grid-cols-[190px_1fr] min-h-[320px]">
+                  <div className={`relative overflow-hidden bg-gradient-to-br ${visual.bg} p-4 flex flex-col justify-between`}>
+                    <div className="absolute -top-14 -right-14 w-36 h-36 rounded-full bg-white/45 blur-2xl" />
+                    <div className="absolute -bottom-14 -left-14 w-36 h-36 rounded-full bg-emerald-200/35 blur-2xl" />
+
+                    <div className="relative flex items-center justify-between text-slate-500">
+                      <span className="text-[10px] font-black tracking-[0.2em] uppercase">{mealCard.slot}</span>
                       <Heart className="w-5 h-5" />
                     </div>
 
-                    <div className="mx-auto mt-4 w-[90px] h-[90px] rounded-full bg-gradient-to-br from-rose-100 via-white to-sky-100 flex items-center justify-center shadow-2xl border border-white/80">
-                      <span className="text-[38px]">{visual.emoji}</span>
+                    <div className="relative mx-auto my-4 w-[112px] h-[112px] rounded-full bg-gradient-to-br from-white via-slate-50 to-sky-100 flex items-center justify-center shadow-[0_28px_55px_rgba(15,23,42,0.15)] border border-white/80">
+                      <span className="text-[54px]">{visual.emoji}</span>
                     </div>
 
-                    <div className="mt-auto pt-4">
-                      <h3 className="text-base font-black text-slate-900 leading-tight line-clamp-3">
+                    <div className="relative">
+                      <h3 className="text-lg font-black text-slate-950 leading-tight line-clamp-3">
                         {activeOption.title}
                       </h3>
-                      <p className="text-slate-500 mt-1 text-xs leading-snug line-clamp-3">{note}</p>
+                      <p className="text-slate-500 mt-2 text-xs leading-relaxed line-clamp-3">{note}</p>
                     </div>
                   </div>
 
-                  <div className="p-1 flex flex-col justify-between min-w-0">
-                    <div>
-                      <div className="flex items-center justify-between gap-3 flex-wrap">
-                        <div>
-                          <p className="text-[10px] uppercase tracking-[0.16em] text-slate-400 font-bold">
-                            Selected for {selectedDay}
-                          </p>
-                          <h4 className="text-base font-black text-slate-900 mt-0.5">Ingredients & nutrition</h4>
-                        </div>
-                        <Badge variant="success">{selectedDay}</Badge>
+                  <div className="p-4 flex flex-col min-w-0">
+                    <div className="flex items-start justify-between gap-3 flex-wrap">
+                      <div>
+                        <p className="text-[10px] uppercase tracking-[0.18em] text-slate-400 font-black">
+                          Selected for {selectedDay}
+                        </p>
+                        <h4 className="text-lg font-black text-slate-950 mt-0.5">Ingredients & nutrition</h4>
                       </div>
+                      <Badge variant="success">{selectedDay}</Badge>
+                    </div>
 
-                      <div className="grid grid-cols-4 gap-1.5 mt-3 text-center">
-                        <div className="rounded-xl bg-slate-50/90 p-2 border border-slate-100">
-                          <p className="text-xs text-slate-400">Calories</p>
-                          <p className="font-black text-slate-900 text-sm mt-0.5">{activeOption.calories}</p>
-                        </div>
-                        <div className="rounded-xl bg-slate-50/90 p-2 border border-slate-100">
-                          <p className="text-xs text-slate-400">Protein</p>
-                          <p className="font-black text-slate-900 text-sm mt-0.5">{activeOption.protein}g</p>
-                        </div>
-                        <div className="rounded-xl bg-slate-50/90 p-2 border border-slate-100">
-                          <p className="text-xs text-slate-400">Carbs</p>
-                          <p className="font-black text-slate-900 text-sm mt-0.5">{activeOption.carbs}g</p>
-                        </div>
-                        <div className="rounded-xl bg-slate-50/90 p-2 border border-slate-100">
-                          <p className="text-xs text-slate-400">Fats</p>
-                          <p className="font-black text-slate-900 text-sm mt-0.5">{activeOption.fats}g</p>
-                        </div>
+                    <div className="grid grid-cols-4 gap-2 mt-3 text-center">
+                      <div className="rounded-[18px] bg-slate-50/90 p-2 border border-slate-100">
+                        <p className="text-[11px] text-slate-400">Calories</p>
+                        <p className="font-black text-slate-950 text-sm mt-0.5">{activeOption.calories}</p>
                       </div>
-
-                      <div className="mt-3">
-                        <p className="font-bold text-slate-900 text-sm">Ingredients</p>
-                        <div className="flex flex-wrap gap-2 mt-3">
-                          {ingredients.map((item) => (
-                            <span
-                              key={item}
-                              className="px-2.5 py-1 rounded-full bg-slate-50 border border-slate-100 text-xs text-slate-700"
-                            >
-                              {item}
-                            </span>
-                          ))}
-                        </div>
+                      <div className="rounded-[18px] bg-slate-50/90 p-2 border border-slate-100">
+                        <p className="text-[11px] text-slate-400">Protein</p>
+                        <p className="font-black text-slate-950 text-sm mt-0.5">{activeOption.protein}g</p>
                       </div>
+                      <div className="rounded-[18px] bg-slate-50/90 p-2 border border-slate-100">
+                        <p className="text-[11px] text-slate-400">Carbs</p>
+                        <p className="font-black text-slate-950 text-sm mt-0.5">{activeOption.carbs}g</p>
+                      </div>
+                      <div className="rounded-[18px] bg-slate-50/90 p-2 border border-slate-100">
+                        <p className="text-[11px] text-slate-400">Fats</p>
+                        <p className="font-black text-slate-950 text-sm mt-0.5">{activeOption.fats}g</p>
+                      </div>
+                    </div>
 
-                      <div className="mt-3 flex flex-wrap gap-1.5">
-                        {activeOption.tags.map((tag) => (
+                    <div className="mt-3">
+                      <p className="font-black text-slate-950 text-sm">Ingredients</p>
+                      <div className="flex flex-wrap gap-1.5 mt-2">
+                        {ingredients.map((item) => (
                           <span
-                            key={tag}
-                            className="px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-semibold border border-emerald-100"
+                            key={item}
+                            className="px-2.5 py-1 rounded-full bg-white/80 border border-slate-100 text-[11px] font-semibold text-slate-600"
                           >
-                            {tag}
+                            {item}
                           </span>
                         ))}
                       </div>
                     </div>
 
+                    <div className="mt-2 flex flex-wrap gap-1.5">
+                      {activeOption.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 text-[11px] font-bold border border-emerald-100"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+
                     <div className="mt-3">
-                      <p className="text-xs font-bold text-slate-900 mb-2">Alternates</p>
+                      <p className="text-xs font-black text-slate-950 mb-2">Alternates</p>
                       <div className="flex gap-2 overflow-x-auto pb-2 no-scrollbar">
                         {mealCard.options.map((option, index) => {
                           const smallVisual = getMealVisual(option.title);
@@ -682,17 +684,17 @@ const MealPlan = () => {
                               key={`${mealCard.slot}-${option.title}`}
                               type="button"
                               onClick={() => handleSelectOption(mealCard.slot, index)}
-                              className={`min-w-[132px] rounded-[16px] p-2 text-left border transition-all ${
+                              className={`min-w-[112px] rounded-[20px] p-2 text-left border transition-all ${
                                 optionIndex === index
-                                  ? "border-brand-500 bg-brand-50 shadow-lg"
-                                  : "border-slate-200 bg-white hover:border-brand-200"
+                                  ? "border-emerald-400 bg-emerald-50/80 shadow-lg shadow-emerald-200/40"
+                                  : "border-slate-100 bg-white/80 hover:border-emerald-200"
                               }`}
                             >
-                              <div className={`w-10 h-10 rounded-full bg-gradient-to-br ${smallVisual.bg} flex items-center justify-center text-xl mx-auto`}>
+                              <div className={`w-10 h-10 rounded-full bg-gradient-to-br ${smallVisual.bg} flex items-center justify-center text-xl mx-auto shadow-sm`}>
                                 {smallVisual.emoji}
                               </div>
 
-                              <p className="font-bold text-slate-900 mt-2 text-xs leading-snug line-clamp-2">
+                              <p className="font-black text-slate-950 mt-2 text-[11px] leading-snug line-clamp-2">
                                 {option.title}
                               </p>
 
@@ -701,8 +703,8 @@ const MealPlan = () => {
                               </p>
 
                               <div className="flex items-center justify-between mt-2 text-[10px]">
-                                <span className="font-semibold text-slate-700">{option.calories} kcal</span>
-                                <CheckCircle2 className={`w-4 h-4 ${optionIndex === index ? "text-brand-600" : "text-slate-300"}`} />
+                                <span className="font-bold text-slate-700">{option.calories} kcal</span>
+                                <CheckCircle2 className={`w-4 h-4 ${optionIndex === index ? "text-emerald-600" : "text-slate-300"}`} />
                               </div>
                             </button>
                           );
@@ -710,7 +712,7 @@ const MealPlan = () => {
                       </div>
                     </div>
 
-                    <div className="flex flex-wrap gap-2 mt-3">
+                    <div className="flex flex-wrap gap-2 mt-auto pt-2 [&_button]:rounded-full [&_button]:px-3 [&_button]:py-2 [&_button]:text-sm">
                       <Button
                         onClick={() =>
                           handleLogMeal(
