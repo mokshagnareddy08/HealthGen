@@ -1,0 +1,12 @@
+[
+  { "name": "Paneer", "calories": 265, "protein": 18, "carbs": 1, "fats": 20, "fiber": 0 },
+  { "name": "Dal Tadka", "calories": 150, "protein": 7, "carbs": 20, "fats": 5, "fiber": 5 },
+  { "name": "Roti", "calories": 85, "protein": 3, "carbs": 18, "fats": 0.5, "fiber": 2 },
+  { "name": "Chicken Curry", "calories": 220, "protein": 25, "carbs": 5, "fats": 12, "fiber": 1 },
+  { "name": "Brown Rice", "calories": 110, "protein": 2.5, "carbs": 23, "fats": 0.8, "fiber": 1.8 },
+  { "name": "Idli", "calories": 58, "protein": 1.5, "carbs": 12, "fats": 0.1, "fiber": 0.5 },
+  { "name": "Dosa", "calories": 133, "protein": 2, "carbs": 26, "fats": 3, "fiber": 1 },
+  { "name": "Palak Paneer", "calories": 190, "protein": 12, "carbs": 6, "fats": 14, "fiber": 3 },
+  { "name": "Moong Dal Khichdi", "calories": 170, "protein": 8, "carbs": 25, "fats": 4, "fiber": 6 },
+  { "name": "Grilled Fish", "calories": 180, "protein": 22, "carbs": 0, "fats": 10, "fiber": 0 }
+]

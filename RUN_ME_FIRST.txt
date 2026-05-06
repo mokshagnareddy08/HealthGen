@@ -1,0 +1,26 @@
+HealthGen
+
+What was fixed:
+1. Backend Supabase URL handling was corrected so auth-protected meal/workout APIs can work.
+2. UI branding was changed to HealthGen with your logo.
+3. Sidebar, login, and key cards were changed to a light pastel glass style with no black sidebar.
+4. Existing frontend and backend .env files are kept in place.
+
+Run order:
+1. Backend:
+   cd backend
+   npm install
+   npm run dev
+
+2. Frontend:
+   cd frontend
+   npm install
+   npm run dev
+
+URLs:
+- Frontend: http://localhost:5173
+- Backend:  http://localhost:5000
+
+Important:
+- If signup says email verification is needed, create the account once and confirm via email, then login.
+- Meal/workout generation routes require a valid Supabase session token, so login first, then create/select a profile, then open Meals or Workouts.

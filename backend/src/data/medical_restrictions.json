@@ -1,0 +1,122 @@
+{
+  "Diabetes": {
+    "avoid": ["Sugar", "White Rice", "Maida", "Honey", "Potato", "Sweet Fruits"],
+    "recommend": ["Fiber-Rich", "Whole Grains", "Leafy Greens"]
+  },
+  "Hypertension": {
+    "avoid": ["High Salt", "Pickles", "Papads", "Processed Meat", "Canned Food"],
+    "recommend": ["Low Sodium", "Potassium-Rich", "Fruits"]
+  },
+  "PCOD": {
+    "avoid": ["Refined Carbs", "Sugary Drinks", "Processed Soy", "Dairy (if sensitive)"],
+    "recommend": ["High Protein", "Low GI Foods", "Healthy Fats"]
+  },
+  "Thyroid": {
+    "avoid": ["Soy", "Cruciferous Veggies (Raw)", "Gluten (if sensitive)"],
+    "recommend": ["Iodine-Rich", "Selenium-Rich", "Nuts"]
+  },
+  "Cholesterol": {
+    "avoid": ["Fried Food", "Butter", "Red Meat", "Full-Fat Dairy"],
+    "recommend": ["Oats", "Legumes", "Omega-3 Foods"]
+  },
+  "Uric Acid": {
+    "avoid": ["Red Meat", "Seafood", "Alcohol", "High Fructose Corn Syrup"],
+    "recommend": ["Cherries", "Low-Fat Dairy", "Plenty of Water"]
+  },
+  "Acidity": {
+    "avoid": ["Spicy Food", "Citrus Fruits", "Coffee", "Carbonated Drinks"],
+    "recommend": ["Banana", "Cold Milk", "Oatmeal"]
+  },
+  "Anemia": {
+    "avoid": ["Excessive Tea/Coffee (inhibits iron)"],
+    "recommend": ["Spinach", "Beetroot", "Red Meat", "Jaggery"]
+  },
+  "Arthritis": {
+    "avoid": ["Nightshade Veggies (optional)", "Processed Sugar"],
+    "recommend": ["Turmeric", "Ginger", "Omega-3"]
+  },
+  "Asthma": {
+    "avoid": ["Sulphites", "Cold Foods"],
+    "recommend": ["Magnesium-Rich", "Vitamin D"]
+  },
+  "Celiac Disease": {
+    "avoid": ["Wheat", "Barley", "Rye"],
+    "recommend": ["Gluten-Free Grains"]
+  },
+  "Constipation": {
+    "avoid": ["Refined Grains", "Unripe Bananas"],
+    "recommend": ["High Fiber", "Papaya", "Prunes"]
+  },
+  "Diarrhea": {
+    "avoid": ["High Fiber", "Dairy", "Spicy Food"],
+    "recommend": ["BRAT Diet", "ORS"]
+  },
+  "Fatty Liver": {
+    "avoid": ["Alcohol", "Added Sugar", "Fried Food"],
+    "recommend": ["Greens", "Tofu", "Coffee"]
+  },
+  "Gout": {
+    "avoid": ["Purine-Rich Foods", "Red Meat"],
+    "recommend": ["Vitamin C", "Water"]
+  },
+  "IBS": {
+    "avoid": ["FODMAPs", "Beans", "Cabbage"],
+    "recommend": ["Low FODMAP Diet"]
+  },
+  "Kidney Stones": {
+    "avoid": ["Oxalate-Rich Foods", "Spinach", "Beets"],
+    "recommend": ["Calcium-Rich", "Low Salt"]
+  },
+  "Lactose Intolerance": {
+    "avoid": ["Milk", "Cheese", "Curd (if severe)"],
+    "recommend": ["Lactose-Free", "Plant Milks"]
+  },
+  "Migraine": {
+    "avoid": ["Aged Cheese", "Chocolate", "MSG"],
+    "recommend": ["Magnesium", "Riboflavin"]
+  },
+  "Obesity": {
+    "avoid": ["High Calorie Dense Foods"],
+    "recommend": ["Portion Control", "High Fiber"]
+  },
+  "Osteoporosis": {
+    "avoid": ["Excessive Salt", "Caffeine"],
+    "recommend": ["Calcium", "Vitamin D"]
+  },
+  "Psoriasis": {
+    "avoid": ["Alcohol", "Dairy", "Gluten"],
+    "recommend": ["Anti-Inflammatory"]
+  },
+  "Sinusitis": {
+    "avoid": ["Dairy", "Cold Drinks"],
+    "recommend": ["Warm Liquids", "Spicy (to clear)"]
+  },
+  "Ulcer": {
+    "avoid": ["Chilli", "Caffeine", "Alcohol"],
+    "recommend": ["Probiotics", "Fiber"]
+  },
+  "Vitamin D Deficiency": {
+    "avoid": [],
+    "recommend": ["Egg Yolk", "Fatty Fish", "Mushrooms"]
+  },
+  "Zinc Deficiency": {
+    "avoid": [],
+    "recommend": ["Pumpkin Seeds", "Nuts", "Meat"]
+  },
+  "Magnesium Deficiency": {
+    "avoid": [],
+    "recommend": ["Dark Chocolate", "Almonds", "Avocado"]
+  },
+  "Potassium Deficiency": {
+    "avoid": [],
+    "recommend": ["Banana", "Spinach", "Coconut Water"]
+  },
+  "Calcium Deficiency": {
+    "avoid": [],
+    "recommend": ["Milk", "Sesame Seeds", "Almonds"]
+  },
+  "B12 Deficiency": {
+    "avoid": [],
+    "recommend": ["Animal Products", "Fortified Cereals"]
+  }
+}
